@@ -26,7 +26,7 @@ pipeline {
                 // Assuming you are using Docker for deployment
                 sh 'docker build -t mirfanduri/demo-ci-cd-jenkins:latest .'
                 sh 'docker push mirfanduri/demo-ci-cd-jenkins:latest'
-                sh 'docker run -d -p 8080:8080 mirfanduri/demo-ci-cd-jenkins:latest'
+                sh 'docker run -d -p 8081:8080 mirfanduri/demo-ci-cd-jenkins:latest'
             }
         }
     }
