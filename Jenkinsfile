@@ -10,6 +10,8 @@ pipeline {
         }
         stage('Build') {
             steps {
+                // Set execute permissions for the mvnw script
+                sh 'chmod +x ./mvnw'
                 // Build the Spring Boot application
                 sh './mvnw clean package'
             }
