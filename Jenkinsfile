@@ -43,13 +43,15 @@ pipeline {
                 }
         stage('Deploy') {
             steps {
-                def buildNumber = env.BUILD_NUMBER
-                def dockerImageTag = "mirfanduri/demo-ci-cd-jenkins:${buildNumber}"
+                script {
+                    def buildNumber = env.BUILD_NUMBER
+                    def dockerImageTag = "mirfanduri/demo-ci-cd-jenkins:${buildNumber}"
 
-                sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
-                sh "docker build -t ${dockerImageTag} ."
-                sh "docker push ${dockerImageTag}"
-                sh "docker run -d -p 8081:8080 ${dockerImageTag}"
+                    sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
+                    sh "docker build -t ${dockerImageTag} ."
+                    sh "docker push ${dockerImageTag}"
+                    sh "docker run -d -p 8081:8080 ${dockerImageTag}"
+                }
             }
         }
     }
