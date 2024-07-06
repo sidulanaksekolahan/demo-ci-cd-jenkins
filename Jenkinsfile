@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id')
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -24,6 +28,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                // Login to Docker Hub
+                sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
                 // Deploy the application
                 // Assuming you are using Docker for deployment
                 sh 'docker build -t mirfanduri/demo-ci-cd-jenkins:latest .'
