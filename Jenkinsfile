@@ -26,6 +26,20 @@ pipeline {
                 sh './mvnw test'
             }
         }
+        stage('Stop Existing Container') {
+                    steps {
+                        script {
+                            // Stop and remove any existing container running on port 8081
+                            sh '''
+                            existing_container=$(docker ps -q --filter "publish=8081")
+                            if [ -n "$existing_container" ]; then
+                                docker stop $existing_container
+                                docker rm $existing_container
+                            fi
+                            '''
+                        }
+                    }
+                }
         stage('Deploy') {
             steps {
                 // Login to Docker Hub
