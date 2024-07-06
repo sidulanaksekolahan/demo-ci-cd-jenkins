@@ -19,6 +19,6 @@ public class Home {
     @GetMapping(path = "/{name}")
     public ResponseEntity<String> printMyName(@PathVariable String name) {
         return new ResponseEntity<>("Hai " + name +
-                ", you are using CI/CD with Jenkins. Congratulations!", HttpStatus.OK);
+                ", you are using CI/CD with GitHub and Jenkins. Congratulations!", HttpStatus.OK);
     }
 }
