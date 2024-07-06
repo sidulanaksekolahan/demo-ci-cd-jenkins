@@ -12,6 +12,6 @@ public class Home {
 
     @GetMapping
     public ResponseEntity<String> home(){
-        return new ResponseEntity<>("Hello Muhammad Irfan", HttpStatus.OK);
+        return new ResponseEntity<>("Hello Muhammad Irfan, you are using Jenkins!", HttpStatus.OK);
     }
 }
