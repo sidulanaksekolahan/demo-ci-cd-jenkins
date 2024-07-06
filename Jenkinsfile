@@ -47,9 +47,9 @@ pipeline {
                 sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
                 // Deploy the application
                 // Assuming you are using Docker for deployment
-                sh 'docker build -t mirfanduri/demo-ci-cd-jenkins:${env.BUILD_NUMBER} .'
-                sh 'docker push mirfanduri/demo-ci-cd-jenkins:${env.BUILD_NUMBER}'
-                sh 'docker run -d -p 8081:8080 mirfanduri/demo-ci-cd-jenkins:${env.BUILD_NUMBER}'
+                sh 'docker build -t mirfanduri/demo-ci-cd-jenkins:latest .'
+                sh 'docker push mirfanduri/demo-ci-cd-jenkins:latest'
+                sh 'docker run -d -p 8081:8080 mirfanduri/demo-ci-cd-jenkins:latest'
             }
         }
     }
