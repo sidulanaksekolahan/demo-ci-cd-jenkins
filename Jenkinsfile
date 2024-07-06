@@ -63,7 +63,8 @@ pipeline {
         }
         success {
             script {
-                def slackMessageBlocks = '''[
+                def slackMessageBlocks = '''
+                [
                     {
                         "type": "section",
                         "text": {
@@ -86,13 +87,15 @@ pipeline {
                             "alt_text": "alt text for image"
                         }
                     }
-                ]'''
-                slackSend(channel: SLACK_CHANNEL, color: 'good', message: "Pipeline succeeded: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})", blocks: slackMessageBlocks)
+                ]
+                '''
+                slackSend(channel: SLACK_CHANNEL, color: 'good', message: "Pipeline succeeded: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})", blocks: slackMessageBlocks.trim())
             }
         }
         failure {
             script {
-                def slackMessageBlocks = '''[
+                def slackMessageBlocks = '''
+                [
                     {
                         "type": "section",
                         "text": {
@@ -100,8 +103,9 @@ pipeline {
                             "text": "Pipeline failed: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
                         }
                     }
-                ]'''
-                slackSend(channel: SLACK_CHANNEL, color: 'danger', message: "Pipeline failed: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})", blocks: slackMessageBlocks)
+                ]
+                '''
+                slackSend(channel: SLACK_CHANNEL, color: 'danger', message: "Pipeline failed: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})", blocks: slackMessageBlocks.trim())
             }
         }
     }
