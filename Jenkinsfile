@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id')
+        SLACK_CHANNEL = '#demo-project'
     }
 
     stages {
@@ -46,9 +47,9 @@ pipeline {
                 sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
                 // Deploy the application
                 // Assuming you are using Docker for deployment
-                sh 'docker build -t mirfanduri/demo-ci-cd-jenkins:latest .'
-                sh 'docker push mirfanduri/demo-ci-cd-jenkins:latest'
-                sh 'docker run -d -p 8081:8080 mirfanduri/demo-ci-cd-jenkins:latest'
+                sh 'docker build -t mirfanduri/demo-ci-cd-jenkins:${env.BUILD_NUMBER} .'
+                sh 'docker push mirfanduri/demo-ci-cd-jenkins:${env.BUILD_NUMBER}'
+                sh 'docker run -d -p 8081:8080 mirfanduri/demo-ci-cd-jenkins:${env.BUILD_NUMBER}'
             }
         }
     }
@@ -60,9 +61,11 @@ pipeline {
         }
         success {
             echo 'Pipeline succeeded!'
+            slackSend (channel: SLACK_CHANNEL, color: 'good', message: "Pipeline succeeded: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})")
         }
         failure {
             echo 'Pipeline failed!'
+            slackSend (channel: SLACK_CHANNEL, color: 'danger', message: "Pipeline failed: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})")
         }
     }
 }
