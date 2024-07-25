@@ -4,6 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id')
         SLACK_CHANNEL = '#demo-project'
+        DB_PASS = credentials('DB_PASS')
     }
 
     stages {
@@ -18,7 +19,7 @@ pipeline {
                 // Set execute permissions for the mvnw script
                 sh 'chmod +x ./mvnw'
                 // Build the Spring Boot application
-                sh './mvnw clean package'
+                sh './mvnw clean package -DDB_PASS=DB_PASS'
             }
         }
         stage('Test') {
