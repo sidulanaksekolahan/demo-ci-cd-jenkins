@@ -1,0 +1,24 @@
+2024-07-07T13:36:36.908+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [main] i.m.m.DemoCiCdJenkinsApplication         : Starting DemoCiCdJenkinsApplication using Java 17.0.8 with PID 15808 (D:\demo\test-ci-cd-jenkins\demo-ci-cd-jenkins\target\classes started by developer in D:\demo\test-ci-cd-jenkins\demo-ci-cd-jenkins)
+2024-07-07T13:36:36.913+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [main] i.m.m.DemoCiCdJenkinsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-07T13:36:38.094+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-07T13:36:38.106+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-07T13:36:38.108+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07T13:36:38.168+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-07T13:36:38.169+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1187 ms
+2024-07-07T13:36:38.550+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-07T13:36:38.559+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [main] i.m.m.DemoCiCdJenkinsApplication         : Started DemoCiCdJenkinsApplication in 2.181 seconds (process running for 2.656)
+2024-07-07T13:36:57.974+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-07T13:36:57.977+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-07T13:36:57.978+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-07-07T13:36:58.070+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-1] id.my.mirfanduri.controller.Home         : >>> request to printMyName
+2024-07-07T13:36:58.228+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-3] id.my.mirfanduri.controller.Home         : >>> request to printMyName
+2024-07-07T13:36:58.796+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-6] id.my.mirfanduri.controller.Home         : >>> request to printMyName
+2024-07-07T13:36:59.106+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-4] id.my.mirfanduri.controller.Home         : >>> request to printMyName
+2024-07-07T13:36:59.278+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-5] id.my.mirfanduri.controller.Home         : >>> request to printMyName
+2024-07-07T13:36:59.464+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-2] id.my.mirfanduri.controller.Home         : >>> request to printMyName
+2024-07-07T13:36:59.628+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-7] id.my.mirfanduri.controller.Home         : >>> request to printMyName
+2024-07-07T13:36:59.780+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-8] id.my.mirfanduri.controller.Home         : >>> request to printMyName
+2024-07-07T13:37:17.638+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-9] id.my.mirfanduri.controller.Home         : >>> request to home
+2024-07-07T13:37:19.188+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-10] id.my.mirfanduri.controller.Home         : >>> request to home
+2024-07-07T13:37:19.340+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-1] id.my.mirfanduri.controller.Home         : >>> request to home
+2024-07-07T13:37:19.507+07:00  INFO 15808 --- [demo-ci-cd-jenkins] [http-nio-8080-exec-3] id.my.mirfanduri.controller.Home         : >>> request to home
